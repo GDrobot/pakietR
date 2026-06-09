@@ -1,3 +1,2 @@
 all:
-    R CMD build .
-    R CMD INSTALL .
+	R CMD INSTALL .

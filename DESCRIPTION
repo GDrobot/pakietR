@@ -7,3 +7,4 @@ Description: selection sort, insertion sort, quick sort
 Authors@R: c(person("Wojciech","Florek",email="01199223@pw.edu.pl",role=c("aut","cre")))
 License: MIT
 Encoding: UTF-8
+URL: https://gdrobot.github.io/pakietR/
