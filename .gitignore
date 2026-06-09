@@ -15,6 +15,7 @@
 # Precompiled Headers
 *.gch
 *.pch
+..Rcheck/*
 
 # Libraries
 *.lib
@@ -53,8 +54,10 @@ dkms.conf
 
 # debug information files
 *.dwo
+*.tar.gz
 
 
 .vscode/*
 docs/*
 docs
+pakietR.Rcheck/*

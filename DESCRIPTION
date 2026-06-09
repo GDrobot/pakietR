@@ -8,3 +8,4 @@ Authors@R: c(person("Wojciech","Florek",email="01199223@pw.edu.pl",role=c("aut",
 License: MIT
 Encoding: UTF-8
 URL: https://gdrobot.github.io/pakietR/
+RoxygenNote: 7.3.2
