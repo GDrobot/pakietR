@@ -6,14 +6,18 @@
 SEXP SelectionSort(SEXP x)
 {
 if(!Rf_isReal(x)) Rf_error("x not numeric");
+int var=0;
+if (Rf_isInteger(x)) var=1;
 size_t n = XLENGTH(x);
 if(n<=1) return x;
 SEXP ans = Rf_allocVector(REALSXP,n);
 PROTECT(ans);
 double *px=REAL(x),*pans=REAL(ans);
 for(size_t i=0;i<n;i++)
+{
 pans[i]=px[i];
-
+if (!R_finite(pans[i])) Rf_error("x contains Inf");
+}
 double temp;
 size_t pos=0;
 for(size_t i=0;i<n-1;i++)
@@ -28,19 +32,26 @@ pos=i+1;
 }
 
 UNPROTECT(1);
+if(var==1)
+ans=Rf_coerceVector(ans, INTSXP);
 return ans;
 }
 
 SEXP InsertionSort(SEXP x)
 {
 if(!Rf_isReal(x)) Rf_error("x not numeric");
+int var=0;
+if (Rf_isInteger(x)) var=1;
 size_t n = XLENGTH(x);
 if(n<=1) return x;
 SEXP ans = Rf_allocVector(REALSXP,n);
 PROTECT(ans);
 double *px=REAL(x),*pans=REAL(ans);
 for(size_t i=0;i<n;i++)
+{
 pans[i]=px[i];
+if (!R_finite(pans[i])) Rf_error("x contains Inf");
+}
 
 double val=pans[1];
 int j=0;
@@ -57,13 +68,15 @@ pans[j+1]=val;
 }
 
 UNPROTECT(1);
+if(var==1)
+ans=Rf_coerceVector(ans, INTSXP);
 return ans;
 }
 
 void qs(double *pans, int l,int r)
 {
 if(l>=r) return;
-int i=l,j=r,s=(l+r)/2;
+int i=l,j=r;
 double p=pans[(l+r)/2],temp;
 while(i<=j)
 {
@@ -89,14 +102,21 @@ qs(pans,i,r);
 SEXP QuickSort(SEXP x)
 {
 if(!Rf_isReal(x)) Rf_error("x not numeric");
+int var=0;
+if (Rf_isInteger(x)) var=1;
 int l=0,r=XLENGTH(x)-1;
 if(r<=0 || l>=r) return x;
 SEXP ans = Rf_allocVector(REALSXP,r+1);
 PROTECT(ans);
 double *px=REAL(x),*pans=REAL(ans);
 for(size_t i=0;i<r+1;i++)
+{
 pans[i]=px[i];
+if (!R_finite(pans[i])) Rf_error("x contains Inf");
+}
 qs(pans,l,r);
 UNPROTECT(1);
+if(var==1)
+ans=Rf_coerceVector(ans, INTSXP);
 return ans;
 }
