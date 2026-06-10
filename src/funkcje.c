@@ -9,7 +9,8 @@ if(!Rf_isReal(x)) Rf_error("x not numeric");
 int var=0;
 if (Rf_isInteger(x)) var=1;
 size_t n = XLENGTH(x);
-if(n<=1) return x;
+if(n<=1) return x;//validation
+
 SEXP ans = Rf_allocVector(REALSXP,n);
 PROTECT(ans);
 double *px=REAL(x),*pans=REAL(ans);
@@ -17,7 +18,8 @@ for(size_t i=0;i<n;i++)
 {
 pans[i]=px[i];
 if (!R_finite(pans[i])) Rf_error("x contains NA or NAN or Inf");
-}
+}//creating vector and validation
+
 double temp;
 size_t pos=0;
 for(size_t i=0;i<n-1;i++)
@@ -29,12 +31,12 @@ temp=pans[i];
 pans[i]=pans[pos];
 pans[pos]=temp;
 pos=i+1;
-}
+}//algorithm
 
 UNPROTECT(1);
 if(var==1)
 ans=Rf_coerceVector(ans, INTSXP);
-return ans;
+return ans;//showing result
 }
 
 SEXP InsertionSort(SEXP x)
@@ -43,7 +45,8 @@ if(!Rf_isReal(x)) Rf_error("x not numeric");
 int var=0;
 if (Rf_isInteger(x)) var=1;
 size_t n = XLENGTH(x);
-if(n<=1) return x;
+if(n<=1) return x;//validation
+
 SEXP ans = Rf_allocVector(REALSXP,n);
 PROTECT(ans);
 double *px=REAL(x),*pans=REAL(ans);
@@ -51,7 +54,7 @@ for(size_t i=0;i<n;i++)
 {
 pans[i]=px[i];
 if (!R_finite(pans[i])) Rf_error("x contains NA or NAN or Inf");
-}
+}//creating vector and validation
 
 double val=pans[1];
 int j=0;
@@ -65,15 +68,15 @@ pans[j+1]=pans[j];
 j--;
 }
 pans[j+1]=val;
-}
+}//algorithm
 
 UNPROTECT(1);
 if(var==1)
 ans=Rf_coerceVector(ans, INTSXP);
-return ans;
+return ans;//showing result
 }
 
-void qs(double *pans, int l,int r)
+void qs(double *pans, int l,int r)//algorithm
 {
 if(l>=r) return;
 int i=l,j=r;
@@ -105,7 +108,8 @@ if(!Rf_isReal(x)) Rf_error("x not numeric");
 int var=0;
 if (Rf_isInteger(x)) var=1;
 int l=0,r=XLENGTH(x)-1;
-if(r<=0 || l>=r) return x;
+if(r<=0 || l>=r) return x;//validation
+
 SEXP ans = Rf_allocVector(REALSXP,r+1);
 PROTECT(ans);
 double *px=REAL(x),*pans=REAL(ans);
@@ -113,10 +117,12 @@ for(size_t i=0;i<r+1;i++)
 {
 pans[i]=px[i];
 if (!R_finite(pans[i])) Rf_error("x contains NA or NAN or Inf");
-}
-qs(pans,l,r);
+}//creating vector and validation
+
+qs(pans,l,r);//algorithm
+
 UNPROTECT(1);
 if(var==1)
 ans=Rf_coerceVector(ans, INTSXP);
-return ans;
+return ans;//showing result
 }

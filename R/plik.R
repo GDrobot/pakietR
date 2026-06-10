@@ -18,7 +18,6 @@ selection_sort <- function(x) {
     .Call("SelectionSort", x, PACKAGE = "pakietR") # nolint
 }
 
-
 #' @title InsertionSort
 #'
 #' @description
@@ -35,7 +34,6 @@ selection_sort <- function(x) {
 insertion_sort <- function(x) {
     .Call("InsertionSort", x, PACKAGE = "pakietR") # nolint
 }
-
 
 #' @title QuickSort
 #'

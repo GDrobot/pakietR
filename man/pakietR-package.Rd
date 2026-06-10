@@ -18,4 +18,9 @@ Useful links:
 \author{
 \strong{Maintainer}: Wojciech Florek \email{01199223@pw.edu.pl}
 
+Authors:
+\itemize{
+  \item Wojciech Florek \email{01199223@pw.edu.pl}
+}
+
 }

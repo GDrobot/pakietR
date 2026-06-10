@@ -15,6 +15,9 @@ Returns a sorted numeric vector.
 \description{
 Sorts a numeric vector with the Quick Sort algorithm.
 }
+\details{
+Performs quick sort (Quick Sort)
+}
 \examples{
 quick_sort(c(4, 2, 8, 1, 5))
 stopifnot(quick_sort(c(3, 1, 2)) == c(1, 2, 3))
