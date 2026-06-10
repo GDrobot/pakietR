@@ -11,3 +11,7 @@ Useful links:
 ## Author
 
 **Maintainer**: Wojciech Florek <01199223@pw.edu.pl>
+
+Authors:
+
+- Wojciech Florek <01199223@pw.edu.pl>

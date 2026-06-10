@@ -18,6 +18,10 @@ selection_sort(x)
 
 Returns a sorted numeric vector.
 
+## Details
+
+Performs selection sort (Selection Sort)
+
 ## Examples
 
 ``` r

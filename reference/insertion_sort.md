@@ -18,6 +18,10 @@ insertion_sort(x)
 
 Returns a sorted numeric vector.
 
+## Details
+
+Performs insertion sort (Insertion Sort)
+
 ## Examples
 
 ``` r
