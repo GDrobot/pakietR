@@ -16,12 +16,20 @@ test_that("test1", {
   expect_equal(selection_sort(c(5, 4, 3, 2, 1)), 1:5)
   expect_equal(insertion_sort(c(5, 4, 3, 2, 1)), 1:5)
   expect_equal(quick_sort(c(5, 4, 3, 2, 1)), 1:5)
+
+  expect_equal(selection_sort(c(3, 3, 3, 3, 3)), c(3, 3, 3, 3, 3))
+  expect_equal(insertion_sort(c(3, 3, 3, 3, 3)), c(3, 3, 3, 3, 3))
+  expect_equal(quick_sort(c(3, 3, 3, 3, 3)), c(3, 3, 3, 3, 3))
 })
 
 test_that("test2",{
   expect_equal(selection_sort(c(3, -1, 3, 0, -5, 0, 2)), c(-5, -1, 0, 0, 2, 3, 3))
   expect_equal(insertion_sort(c(3, -1, 3, 0, -5, 0, 2)), c(-5, -1, 0, 0, 2, 3, 3))
   expect_equal(quick_sort(c(3, -1, 3, 0, -5, 0, 2)), c(-5, -1, 0, 0, 2, 3, 3))
+
+  expect_equal(selection_sort(c(3.2, -1.9, 3.1, 0.7, -5.2, 0.9, 2.4)), c(-5.2, -1.9, 0.7, 0.9, 2.4, 3.1, 3.2))
+  expect_equal(insertion_sort(c(3.2, -1.9, 3.1, 0.7, -5.2, 0.9, 2.4)), c(-5.2, -1.9, 0.7, 0.9, 2.4, 3.1, 3.2))
+  expect_equal(quick_sort(c(3.2, -1.9, 3.1, 0.7, -5.2, 0.9, 2.4)), c(-5.2, -1.9, 0.7, 0.9, 2.4, 3.1, 3.2))
 })
 
 test_that("test3",{
@@ -35,7 +43,13 @@ test_that("test3",{
 })
 
 test_that("test4",{
-  expect_equal(selection_sort(c(NA,NA,NA)), c(NA,NA,NA))
-  expect_equal(insertion_sort(c(NA,NA,NA)), c(NA,NA,NA))
-  expect_equal(quick_sort(c(NA,NA,NA)), c(NA,NA,NA))
+  expect_error(selection_sort(c(3, NA, 1)), regexp = "x contains NA or NAN or Inf")
+  expect_error(insertion_sort(c(3, NA, 1)), regexp = "x contains NA or NAN or Inf")
+  expect_error(quick_sort(c(3, NA, 1)), regexp = "x contains NA or NAN or Inf")
+})
+
+test_that("test5",{
+  expect_error(selection_sort(c(3, "hi", 1)), regexp = "x not numeric")
+  expect_error(insertion_sort(c(3, "hi", 1)), regexp = "x not numeric")
+  expect_error(quick_sort(c(3, "hi", 1)), regexp = "x not numeric")
 })

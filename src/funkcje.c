@@ -16,7 +16,7 @@ double *px=REAL(x),*pans=REAL(ans);
 for(size_t i=0;i<n;i++)
 {
 pans[i]=px[i];
-if (!R_finite(pans[i])) Rf_error("x contains Inf");
+if (!R_finite(pans[i])) Rf_error("x contains NA or NAN or Inf");
 }
 double temp;
 size_t pos=0;
@@ -50,7 +50,7 @@ double *px=REAL(x),*pans=REAL(ans);
 for(size_t i=0;i<n;i++)
 {
 pans[i]=px[i];
-if (!R_finite(pans[i])) Rf_error("x contains Inf");
+if (!R_finite(pans[i])) Rf_error("x contains NA or NAN or Inf");
 }
 
 double val=pans[1];
@@ -112,7 +112,7 @@ double *px=REAL(x),*pans=REAL(ans);
 for(size_t i=0;i<r+1;i++)
 {
 pans[i]=px[i];
-if (!R_finite(pans[i])) Rf_error("x contains Inf");
+if (!R_finite(pans[i])) Rf_error("x contains NA or NAN or Inf");
 }
 qs(pans,l,r);
 UNPROTECT(1);
