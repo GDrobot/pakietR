@@ -15,9 +15,6 @@ Returns a sorted numeric vector.
 \description{
 Sorts a numeric vector with the SelectionSort algorithm
 }
-\details{
-Performs selection sort (Selection Sort)
-}
 \examples{
 selection_sort(c(4, 2, 8, 1, 5))
 stopifnot(selection_sort(c(3, 1, 2)) == c(1, 2, 3))

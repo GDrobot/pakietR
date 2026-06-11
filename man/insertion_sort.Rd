@@ -15,9 +15,6 @@ Returns a sorted numeric vector.
 \description{
 Sorts a numeric vector with the InsertionSort algorithm
 }
-\details{
-Performs insertion sort (Insertion Sort)
-}
 \examples{
 insertion_sort(c(4, 2, 8, 1, 5))
 stopifnot(insertion_sort(c(3, 1, 2)) == c(1, 2, 3))
