@@ -13,9 +13,6 @@ working directory.
 
 - [`insertion_sort()`](https://gdrobot.github.io/pakietR/reference/insertion_sort.md)
   : InsertionSort
-- [`pakietR`](https://gdrobot.github.io/pakietR/reference/pakietR-package.md)
-  [`pakietR-package`](https://gdrobot.github.io/pakietR/reference/pakietR-package.md)
-  : pakietR: Sorting algorithms
 - [`quick_sort()`](https://gdrobot.github.io/pakietR/reference/quick_sort.md)
   : QuickSort
 - [`selection_sort()`](https://gdrobot.github.io/pakietR/reference/selection_sort.md)

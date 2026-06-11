@@ -18,10 +18,6 @@ quick_sort(x)
 
 Returns a sorted numeric vector.
 
-## Details
-
-Performs quick sort (Quick Sort)
-
 ## Examples
 
 ``` r

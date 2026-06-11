@@ -1,4 +1,6 @@
-# pakietR: Sorting algorithms
+# pakietR: sorting
+
+Sorting package.
 
 selection sort, insertion sort, quick sort
 
